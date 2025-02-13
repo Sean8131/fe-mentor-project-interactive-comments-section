@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js", 
-    "dev": "vite", 
-    "build": "vite build", 
-    "preview": "vite preview" 
+    "start": "nodemon index.js",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,9 @@
   "homepage": "https://github.com/Belahk2596/khaleb-fe-mentor-project-interactive-comments-section#readme",
   "dependencies": {
     "express": "^4.21.2",
+    "mongoose": "^8.10.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0" 
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
@@ -35,7 +36,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
-    "vite": "^6.1.0",
-    "nodemon": "^3.1.9" 
+    "nodemon": "^3.1.9",
+    "vite": "^6.1.0"
   }
 }
