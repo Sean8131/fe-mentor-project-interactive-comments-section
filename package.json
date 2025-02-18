@@ -4,8 +4,8 @@
   "description": "![Design preview for the Interactive comments section coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
+    "test": "jest",
+    "start": "node app.js",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -22,11 +22,13 @@
   "homepage": "https://github.com/Belahk2596/khaleb-fe-mentor-project-interactive-comments-section#readme",
   "dependencies": {
     "express": "^4.21.2",
-    "mongoose": "^8.10.0",
+    "mongodb": "^6.13.0",
+    "mongoose": "^8.10.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "@eslint/js": "^9.19.0",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
@@ -38,5 +40,7 @@
     "globals": "^15.14.0",
     "nodemon": "^3.1.9",
     "vite": "^6.1.0"
-  }
+  },
+  "keywords": [],
+  "type": "commonjs"
 }
