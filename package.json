@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "![Design preview for the Interactive comments section coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
+  "type": "module",
+  "jest": {
+    "transform": {}
+},
   "scripts": {
-    "test": "jest",
-    "start": "node app.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "start": "node -r esm app.js",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -21,6 +25,7 @@
   },
   "homepage": "https://github.com/Belahk2596/khaleb-fe-mentor-project-interactive-comments-section#readme",
   "dependencies": {
+    "esm": "^3.2.25",
     "express": "^4.21.2",
     "mongodb": "^6.13.0",
     "mongoose": "^8.10.1",
@@ -28,7 +33,6 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "jest": "^29.7.0",
     "@eslint/js": "^9.19.0",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
@@ -38,9 +42,9 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
+    "jest": "^29.7.0",
     "nodemon": "^3.1.9",
     "vite": "^6.1.0"
   },
-  "keywords": [],
-  "type": "commonjs"
+  "keywords": []
 }

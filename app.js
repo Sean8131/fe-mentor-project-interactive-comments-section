@@ -1,22 +1,8 @@
-const express = require("express");
+import express from 'express';
+import Comment from './model.js';
+import mongoose from 'mongoose';
 const app = express();
 const port = 3000;
-
-const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/commentsDB");
-
-const CommentSchema = new mongoose.Schema({
-  comment: {
-    type: String,
-    require: true,
-  },
-  name: {
-    type: String,
-    require: true,
-  },
-});
-
-const Comment = new mongoose.model("Comment", CommentSchema);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
@@ -24,7 +10,7 @@ app.get("/", (req, res) => {
 
 app.get("/comments", async (req, res) => {
   
-  const commentsFromDB = await Comment.find();
+  const commentsFromDB = await Comment.find().lean();
 
   res.json(
     commentsFromDB
