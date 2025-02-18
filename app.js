@@ -3,6 +3,7 @@ import Comment from './model.js';
 import mongoose from 'mongoose';
 const app = express();
 const port = 3000;
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
@@ -17,14 +18,16 @@ app.get("/comments", async (req, res) => {
   );
 });
 
-app.get("/comments/bd150d38-a183-4cfc-9b00-df033b5dd558", (req, res) => {
-  res.json([
-    {
-      comment: "Yo",
-      name: "Adrian"
-    }
-  ]);
-});
+app.post("/comments", async (req,res) => {
+
+const addComment = await Comment.create({
+  name: req.body.name,
+  comment: req.body.comment
+})
+
+res.status(201);
+
+})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

@@ -15,7 +15,7 @@ test("/", async () => {
   expect(await response.text()).toBe("Hello World!");
 });
 
-test("/comments", async () => {
+test("get /comments", async () => {
   const response = await fetch("http://localhost:3000/comments");
 
   const commentsFromServer = await response.json();
@@ -25,13 +25,19 @@ test("/comments", async () => {
   expect(commentsFromServer[0].comment).toBe("Hello");
 });
 
-test("/comments/bd150d38-a183-4cfc-9b00-df033b5dd558", async () => {
-    const response = await fetch("http://localhost:3000/comments/bd150d38-a183-4cfc-9b00-df033b5dd558");
+test("post /comments", async () => {
+  const response = await fetch("http://localhost:3000/comments");
+
+  expect(response.status).toEqual(201);
+})
+
+// test("/comments/bd150d38-a183-4cfc-9b00-df033b5dd558", async () => {
+//     const response = await fetch("http://localhost:3000/comments/bd150d38-a183-4cfc-9b00-df033b5dd558");
   
-    expect(await response.json()).toEqual([
-      {
-          comment: "Yo",
-          name: "Adrian"
-      }
-    ]);
-  });
+//     expect(await response.json()).toEqual([
+//       {
+//           comment: "Yo",
+//           name: "Adrian"
+//       }
+//     ]);
+//   });
