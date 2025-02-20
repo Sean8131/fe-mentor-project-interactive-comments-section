@@ -1,6 +1,6 @@
-import express from 'express';
-import Comment from './model.js';
-import mongoose from 'mongoose';
+import express from "express";
+import Comment from "./model.js";
+import mongoose from "mongoose";
 const app = express();
 const port = 3000;
 app.use(express.json());
@@ -10,24 +10,24 @@ app.get("/", (req, res) => {
 });
 
 app.get("/comments", async (req, res) => {
-  
   const commentsFromDB = await Comment.find().lean();
 
-  res.json(
-    commentsFromDB
-  );
+  res.json(commentsFromDB);
 });
 
-app.post("/comments", async (req,res) => {
+console.log("before app.post");
 
-const addComment = await Comment.create({
-  name: req.body.name,
-  comment: req.body.comment
-})
+app.post("/comments", async (req, res) => {
+  console.log("app.post");
+  const addComment = await Comment.create({
+    name: req.body.name,
+    comment: req.body.comment,
+  });
 
-res.status(201);
+  res.status(201).json(addComment);
+});
 
-})
+console.log("after app.post");
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
