@@ -40,7 +40,7 @@ test("post /comments", async () => {
   console.log(await response.text());
 
   // const json = await response.json();
-  // expect(json.name).toBe("Jason");
+  // expect(json.body.name).toBe("Jason");
 });
 
 // test("/comments/bd150d38-a183-4cfc-9b00-df033b5dd558", async () => {
